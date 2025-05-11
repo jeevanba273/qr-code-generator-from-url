@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 8080;
 app.use(express.static(join(__dirname, 'dist')));
 
 // For any request that doesn't match a static file, serve index.html
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, 'dist/index.html'));
+app.get('*', function(req, res) {
+  res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => {
