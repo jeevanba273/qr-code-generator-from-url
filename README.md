@@ -1,4 +1,5 @@
-# QR code generator
+
+# QRForge
 
 Made with [GPT Engineer](https://gptengineer.app)
 
