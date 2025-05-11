@@ -3,10 +3,9 @@
 
 QR Forge is a powerful, user-friendly QR code generator web application that allows you to create customized QR codes with various styling options. Built with modern web technologies like React and Tailwind CSS, it offers a seamless and responsive user experience.
 
-
 ## Live Demo
 
-🚀 [Check out QR Forge in action](#)
+🚀 [Check out QR Forge in action](#) <!-- Update this with your Railway URL once deployed -->
 
 ## Features
 
@@ -85,23 +84,27 @@ QR Forge leverages the power of several technologies to deliver a seamless QR co
    - Select the QR Forge repository
 
 3. **Configure Your Project**:
-   - Railway will automatically detect it as a Node.js project
-   - Set the following environment variables in the Railway dashboard:
+   - In the Railway dashboard, go to the "Settings" tab
+   - Under "Build & Deploy" settings, configure:
+     - Build Command: `npm run build`
+     - Start Command: `node server.js`
+   - Set the following environment variables:
      - `NODE_ENV`: `production`
-     - `PORT`: `8080`
+     - `PORT`: `8080` (or let Railway assign it automatically)
 
-4. **Deploy Settings**:
-   - Navigate to the "Settings" tab of your project
-   - Under "Build & Deploy", set:
-     - Build Command: `npm run build` or `yarn build`
-     - Start Command: `npm run start` or `yarn start`
-
-5. **Domain Setup**:
+4. **Domain Setup**:
    - Railway automatically assigns a subdomain for your app
    - To use a custom domain:
      - Go to the "Settings" tab
      - Click on "Domains"
      - Add your custom domain and follow the verification steps
+
+5. **Troubleshooting Deployment**:
+   - If you see "The train has not arrived at the station" error:
+     - Check the deployment logs for specific errors
+     - Make sure the build process completes successfully
+     - Verify that `server.js` is in your repository's root directory
+     - Confirm that the start command is set to `node server.js`
 
 6. **Monitor Your Deployment**:
    - Check the "Deployments" tab to monitor build and deployment status
@@ -117,8 +120,6 @@ QR Forge leverages the power of several technologies to deliver a seamless QR co
 - **Resources**: Start with the free tier, which includes 500 hours of runtime per month
 - **Scaling**: Adjust the container specifications if needed under the "Settings" tab
 - **Monitoring**: Set up monitoring alerts in the Railway dashboard for uptime and performance
-
-
 
 ## Acknowledgements
 
