@@ -3,11 +3,10 @@
 
 QR Forge is a powerful, user-friendly QR code generator web application that allows you to create customized QR codes with various styling options. Built with modern web technologies like React and Tailwind CSS, it offers a seamless and responsive user experience.
 
-![QR Forge Screenshot](https://placeholder.pics/svg/400x200/DEDEDE/555555/QR%20Forge%20Screenshot)
 
 ## Live Demo
 
-🚀 [Check out QR Forge in action](#) <!-- Replace with your actual Railway.app deployment URL -->
+🚀 [Check out QR Forge in action](#)
 
 ## Features
 
@@ -119,13 +118,7 @@ QR Forge leverages the power of several technologies to deliver a seamless QR co
 - **Scaling**: Adjust the container specifications if needed under the "Settings" tab
 - **Monitoring**: Set up monitoring alerts in the Railway dashboard for uptime and performance
 
-## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 
