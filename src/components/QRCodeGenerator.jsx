@@ -103,7 +103,7 @@ const QRCodeGenerator = () => {
   return (
     <Card className="w-full max-w-md mx-auto shadow-lg">
       <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-500 py-4">
-        <CardTitle className="text-2xl font-bold text-white text-center">QRForge</CardTitle>
+        <CardTitle className="text-2xl font-bold text-white text-center">QR Forge</CardTitle>
       </CardHeader>
       <CardContent className="p-6 space-y-6">
         <Input

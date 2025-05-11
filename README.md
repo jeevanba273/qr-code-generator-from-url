@@ -1,5 +1,5 @@
 
-# QRForge
+# QR Forge
 
 Made with [GPT Engineer](https://gptengineer.app)
 
