@@ -126,7 +126,7 @@ const QRCodeGenerator = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Enter text or URL and press Enter"
-                  className="w-full text-lg pl-4 pr-10 py-3 backdrop-blur-sm bg-white/20 border-white/20 text-indigo-50 placeholder-white/90 focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all"
+                  className="w-full text-lg pl-4 pr-10 py-3 backdrop-blur-sm bg-white/20 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all"
                 />
                 <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                   <Sparkles className="h-5 w-5 text-purple-300" />
