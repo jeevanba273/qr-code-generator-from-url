@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Type, Maximize } from 'lucide-react';
@@ -13,16 +13,44 @@ const AdvancedOptions = ({
   resolution,
   setResolution
 }) => {
+  const inputRef = useRef(null);
+
+  // This useEffect handles focus/blur to control input width
+  useEffect(() => {
+    const handleFocus = () => {
+      // Do nothing or add specific focus behavior if needed
+      // The key is we're NOT letting the browser decide how to handle focus
+    };
+
+    const handleBlur = () => {
+      // Ensure the input stays contained
+      if (inputRef.current) {
+        inputRef.current.style.width = '100%';
+      }
+    };
+
+    const inputElement = inputRef.current;
+    if (inputElement) {
+      inputElement.addEventListener('focus', handleFocus);
+      inputElement.addEventListener('blur', handleBlur);
+      
+      return () => {
+        inputElement.removeEventListener('focus', handleFocus);
+        inputElement.removeEventListener('blur', handleBlur);
+      };
+    }
+  }, []);
+
   return (
-    <div className="space-y-6 max-w-full">
+    <div className="space-y-6">
       <div className="space-y-2">
         <Label htmlFor="text-below" className="flex items-center text-white space-x-2 pl-4">
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
-        {/* Fixed-width container that's smaller than parent */}
-        <div className="w-[95%] mx-auto relative">
+        <div className="w-full max-w-full overflow-hidden">
           <input 
+            ref={inputRef}
             id="text-below" 
             value={text} 
             onChange={e => setText(e.target.value)} 
@@ -31,22 +59,21 @@ const AdvancedOptions = ({
             style={{
               boxSizing: 'border-box',
               width: '100%',
-              height: '40px',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              whiteSpace: 'nowrap'
+              maxWidth: '100%',
+              height: '40px'
             }}
           />
         </div>
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="resolution" className="flex items-center text-white space-x-2">
+        <Label htmlFor="resolution" className="flex items-center text-white space-x-2 pl-4">
           <Maximize className="h-4 w-4" />
           <span>QR Code Resolution</span>
         </Label>
-        <div className="flex items-center space-x-4">
-          <div className="flex-grow">
+        {/* Changed layout to flex-col to stack elements vertically */}
+        <div className="flex flex-col items-center space-y-3">
+          <div className="w-full">
             <Slider 
               id="resolution" 
               min={100} 
@@ -56,6 +83,7 @@ const AdvancedOptions = ({
               onValueChange={value => setResolution(value[0])} 
             />
           </div>
+          {/* Centered resolution info below slider */}
           <span className="text-white/90 text-sm font-mono bg-white/10 px-2 py-1 rounded">
             {resolution}×{resolution}
           </span>
