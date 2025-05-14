@@ -7,7 +7,7 @@ import { HomeIcon } from "lucide-react";
 export const navItems = [
   {
     title: "Home",
-    to: "/",
+    to: "#home",
     icon: <HomeIcon className="h-4 w-4" />,
   },
 ];

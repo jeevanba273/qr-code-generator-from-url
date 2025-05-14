@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 8080;
 // Serve static files from the dist directory
 app.use(express.static(join(__dirname, 'dist')));
 
-// Simple route handler for all paths
-app.get('/*', (req, res) => {
+// Simple route handler - avoid path-to-regexp issues by using simpler syntax
+app.get('*', function(req, res) {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
