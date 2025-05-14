@@ -23,14 +23,13 @@ const AdvancedOptions = ({
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
-        <div className="relative w-full flex">
+        <div className="w-full">
           <Input 
             id="text-below" 
             value={text} 
             onChange={e => setText(e.target.value)} 
             placeholder="Enter text to display below QR code"
             className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-            style={{ maxWidth: "100%", width: "100%" }}
           />
         </div>
       </div>
