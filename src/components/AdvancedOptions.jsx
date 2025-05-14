@@ -25,7 +25,7 @@ const AdvancedOptions = ({
     const handleBlur = () => {
       // Ensure the input stays contained
       if (inputRef.current) {
-        inputRef.current.style.width = '100%';
+        inputRef.current.style.width = '95%';
       }
     };
 
@@ -48,19 +48,22 @@ const AdvancedOptions = ({
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
-        <div className="w-full max-w-full overflow-hidden">
+        {/* Container with centering for the 95% width input */}
+        <div className="w-full flex justify-center">
           <input 
             ref={inputRef}
             id="text-below" 
             value={text} 
             onChange={e => setText(e.target.value)} 
             placeholder="Enter text to display below QR code"
-            className="rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-[95%] rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             style={{
               boxSizing: 'border-box',
-              width: '100%',
-              maxWidth: '100%',
-              height: '40px'
+              maxWidth: '95%',
+              height: '40px',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap'
             }}
           />
         </div>
@@ -71,9 +74,10 @@ const AdvancedOptions = ({
           <Maximize className="h-4 w-4" />
           <span>QR Code Resolution</span>
         </Label>
-        {/* Changed layout to flex-col to stack elements vertically */}
+        {/* Vertical layout with centered elements */}
         <div className="flex flex-col items-center space-y-3">
-          <div className="w-full">
+          {/* Slider with 95% width to match input */}
+          <div className="w-[95%]">
             <Slider 
               id="resolution" 
               min={100} 
@@ -83,7 +87,7 @@ const AdvancedOptions = ({
               onValueChange={value => setResolution(value[0])} 
             />
           </div>
-          {/* Centered resolution info below slider */}
+          {/* Centered resolution display */}
           <span className="text-white/90 text-sm font-mono bg-white/10 px-2 py-1 rounded">
             {resolution}×{resolution}
           </span>
