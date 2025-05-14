@@ -1,35 +1,39 @@
 
 import React from 'react';
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Code } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden mt-10">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(43,75,237,0.1),transparent_50%)] pointer-events-none"></div>
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 relative z-10">
+    <footer className="relative z-10 overflow-hidden pt-10 pb-6">
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-center items-center space-x-6">
           <a 
             href="https://github.com/jeevanba273" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110"
+            className="text-white/70 hover:text-white transition-all duration-300 transform hover:scale-110"
+            aria-label="GitHub"
           >
-            <span className="sr-only">GitHub</span>
             <Github className="h-8 w-8" />
           </a>
+          <div className="h-10 w-px bg-white/20"></div>
           <a 
             href="https://www.linkedin.com/in/jeevanba273/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110"
+            className="text-white/70 hover:text-white transition-all duration-300 transform hover:scale-110"
+            aria-label="LinkedIn"
           >
-            <span className="sr-only">LinkedIn</span>
             <Linkedin className="h-8 w-8" />
           </a>
         </div>
-        <div className="mt-4">
-          <p className="text-center text-xs text-gray-400">
-            © {new Date().getFullYear()} QR Forge. All rights reserved.
+        <div className="mt-6">
+          <p className="text-center text-sm text-white/60">
+            <span className="flex items-center justify-center">
+              <Code className="h-4 w-4 mr-2" />
+              © {new Date().getFullYear()} QR Forge. All rights reserved.
+            </span>
           </p>
         </div>
       </div>

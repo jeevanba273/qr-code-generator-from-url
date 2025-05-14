@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
+import { Type, Maximize } from 'lucide-react';
+
 const AdvancedOptions = ({
   text,
   setText,
@@ -13,20 +16,46 @@ const AdvancedOptions = ({
   resolution,
   setResolution
 }) => {
-  return <div className="space-y-4">
-      <div>
-        <Label htmlFor="text-below">Text Below QR Code</Label>
-        <Input id="text-below" value={text} onChange={e => setText(e.target.value)} placeholder="Enter text to display below QR code" />
+  return (
+    <div className="space-y-6">
+      <div className="space-y-2">
+        <Label htmlFor="text-below" className="flex items-center text-white space-x-2">
+          <Type className="h-4 w-4" />
+          <span>Text Below QR Code</span>
+        </Label>
+        <Input 
+          id="text-below" 
+          value={text} 
+          onChange={e => setText(e.target.value)} 
+          placeholder="Enter text to display below QR code"
+          className="bg-white/10 border-white/20 text-white placeholder-white/60 focus:ring-2 focus:ring-violet-400 focus:border-transparent"
+        />
       </div>
       
-      
-      <div>
-        <Label htmlFor="resolution">QR Code Resolution</Label>
-        <div className="flex items-center space-x-2">
-          <Slider id="resolution" min={100} max={1000} step={10} value={[resolution]} onValueChange={value => setResolution(value[0])} />
-          <span>{resolution}x{resolution}</span>
+      <div className="space-y-2">
+        <Label htmlFor="resolution" className="flex items-center text-white space-x-2">
+          <Maximize className="h-4 w-4" />
+          <span>QR Code Resolution</span>
+        </Label>
+        <div className="flex items-center space-x-4">
+          <div className="flex-grow">
+            <Slider 
+              id="resolution" 
+              min={100} 
+              max={1000} 
+              step={10} 
+              value={[resolution]} 
+              onValueChange={value => setResolution(value[0])} 
+              className="[&>span]:bg-violet-500 [&>span]:border-violet-600"
+            />
+          </div>
+          <span className="text-white/90 text-sm font-mono bg-white/10 px-2 py-1 rounded">
+            {resolution}×{resolution}
+          </span>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default AdvancedOptions;
