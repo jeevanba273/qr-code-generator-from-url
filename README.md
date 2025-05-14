@@ -5,7 +5,7 @@ QR Forge is a powerful, user-friendly QR code generator web application that all
 
 ## Live Demo
 
-🚀 [Check out QR Forge in action](#) <!-- Update this with your Railway URL once deployed -->
+🚀 [Check out QR Forge in action](https://qr-code-generator-from-url.up.railway.app/) <!-- Update this with your Railway URL once deployed -->
 
 ## Features
 
@@ -49,8 +49,8 @@ QR Forge leverages the power of several technologies to deliver a seamless QR co
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/qr-forge.git
-   cd qr-forge
+   git clone https://github.com/jeevanba273/qr-code-generator-from-url.git
+   cd qr-code-generator-from-url
    ```
 
 2. Install dependencies:
