@@ -23,13 +23,15 @@ const AdvancedOptions = ({
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
-        <Input 
-          id="text-below" 
-          value={text} 
-          onChange={e => setText(e.target.value)} 
-          placeholder="Enter text to display below QR code"
-          className="w-full max-w-full bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all"
-        />
+        <div className="relative w-full">
+          <Input 
+            id="text-below" 
+            value={text} 
+            onChange={e => setText(e.target.value)} 
+            placeholder="Enter text to display below QR code"
+            className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all overflow-hidden"
+          />
+        </div>
       </div>
       
       <div className="space-y-2">
