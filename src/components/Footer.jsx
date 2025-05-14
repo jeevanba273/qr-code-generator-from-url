@@ -2,6 +2,8 @@ import React from 'react';
 import { Github, Linkedin, Code } from "lucide-react";
 
 const Footer = () => {
+  const copyrightText = `© ${new Date().getFullYear()} QR Forge. All rights reserved.`;
+  
   return (
     <footer className="relative z-10 overflow-hidden pt-10 pb-6">
       <div className="absolute inset-0 bg-black/30 backdrop-blur-sm pointer-events-none"></div>
@@ -31,7 +33,7 @@ const Footer = () => {
           <p className="text-center text-sm text-white/60">
             <span className="flex items-center justify-center">
               <Code className="h-4 w-4 mr-2" />
-              © 2025 QR Forge. All rights reserved.
+              {copyrightText}
             </span>
           </p>
         </div>
