@@ -16,7 +16,7 @@ const AdvancedOptions = ({
   return (
     <div className="space-y-6 max-w-full">
       <div className="space-y-2">
-        <Label htmlFor="text-below" className="flex items-center text-white space-x-2">
+        <Label htmlFor="text-below" className="flex items-center text-white space-x-2 pl-4">
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
