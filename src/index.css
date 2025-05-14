@@ -74,3 +74,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this to your index.css file */
+@layer utilities {
+  input, textarea {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    resize: none !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  
+  input:focus, textarea:focus {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
