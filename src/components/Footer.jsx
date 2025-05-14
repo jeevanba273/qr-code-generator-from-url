@@ -32,7 +32,7 @@ const Footer = () => {
           <p className="text-center text-sm text-white/60">
             <span className="flex items-center justify-center">
               <Code className="h-4 w-4 mr-2" />
-              © {new Date().getFullYear()} QR Forge. All rights reserved.
+              © {new Date().getFullYear().toString()} QR Forge. All rights reserved.
             </span>
           </p>
         </div>
