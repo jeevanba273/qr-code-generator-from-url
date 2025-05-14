@@ -14,25 +14,24 @@ const AdvancedOptions = ({
   setResolution
 }) => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-full">
       <div className="space-y-2">
         <Label htmlFor="text-below" className="flex items-center text-white space-x-2">
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
-        <div className="w-full">
-          {/* Custom input instead of the shadcn Input component */}
+        {/* Fixed-width container that's smaller than parent */}
+        <div className="w-[95%] mx-auto relative">
           <input 
             id="text-below" 
             value={text} 
             onChange={e => setText(e.target.value)} 
             placeholder="Enter text to display below QR code"
-            className="flex h-10 w-full rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             style={{
               boxSizing: 'border-box',
               width: '100%',
-              maxWidth: '100%',
-              minWidth: '0',
+              height: '40px',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap'
