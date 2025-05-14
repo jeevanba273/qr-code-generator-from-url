@@ -28,7 +28,7 @@ const AdvancedOptions = ({
           value={text} 
           onChange={e => setText(e.target.value)} 
           placeholder="Enter text to display below QR code"
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-violet-400 focus:border-transparent"
+          className="w-full max-w-full bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all"
         />
       </div>
       
