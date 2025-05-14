@@ -22,17 +22,18 @@ const AdvancedOptions = ({
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
-        <div className="w-full relative">
-          <Input 
+        <div className="w-full">
+          {/* Replace the Input component with a custom styled input */}
+          <input 
             id="text-below" 
             value={text} 
             onChange={e => setText(e.target.value)} 
             placeholder="Enter text to display below QR code"
-            className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all max-w-full"
-            style={{ 
-              maxWidth: "100%", 
-              overflow: "hidden",
-              textOverflow: "ellipsis"
+            className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            style={{
+              boxSizing: 'border-box',
+              resize: 'none',
+              height: '40px'
             }}
           />
         </div>
