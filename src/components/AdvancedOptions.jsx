@@ -46,7 +46,6 @@ const AdvancedOptions = ({
               step={10} 
               value={[resolution]} 
               onValueChange={value => setResolution(value[0])} 
-              className="[&>span]:bg-violet-500 [&>span]:border-violet-600"
             />
           </div>
           <span className="text-white/90 text-sm font-mono bg-white/10 px-2 py-1 rounded">
