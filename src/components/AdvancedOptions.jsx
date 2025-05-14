@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,13 +22,18 @@ const AdvancedOptions = ({
           <Type className="h-4 w-4" />
           <span>Text Below QR Code</span>
         </Label>
-        <div className="w-full">
+        <div className="w-full relative">
           <Input 
             id="text-below" 
             value={text} 
             onChange={e => setText(e.target.value)} 
             placeholder="Enter text to display below QR code"
-            className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all max-w-full"
+            style={{ 
+              maxWidth: "100%", 
+              overflow: "hidden",
+              textOverflow: "ellipsis"
+            }}
           />
         </div>
       </div>
