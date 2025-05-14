@@ -1,7 +1,5 @@
 import React from 'react';
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { Type, Maximize } from 'lucide-react';
 
@@ -23,17 +21,21 @@ const AdvancedOptions = ({
           <span>Text Below QR Code</span>
         </Label>
         <div className="w-full">
-          {/* Replace the Input component with a custom styled input */}
+          {/* Custom input instead of the shadcn Input component */}
           <input 
             id="text-below" 
             value={text} 
             onChange={e => setText(e.target.value)} 
             placeholder="Enter text to display below QR code"
-            className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="flex h-10 w-full rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50"
             style={{
               boxSizing: 'border-box',
-              resize: 'none',
-              height: '40px'
+              width: '100%',
+              maxWidth: '100%',
+              minWidth: '0',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap'
             }}
           />
         </div>
