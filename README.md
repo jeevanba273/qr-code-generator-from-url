@@ -34,7 +34,7 @@ QR Forge leverages the power of several technologies to deliver a seamless QR co
 ### Technical Implementation
 
 - **React Components**: Modular component structure for maintainability and code reuse.
-- **Canvas API**: Used for rendering the final QR code with text and logo additions.
+- **Canvas API**: Used for rendering the final QR code with text additions.
 - **Clipboard API**: Enables direct copying of the generated QR code to clipboard.
 - **Advanced Styling**: Tailwind CSS with custom gradients for a polished UI.
 
